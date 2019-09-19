@@ -116,7 +116,6 @@
             this.$confirm('确认提交吗？', '提示', {}).then(() => {
               this.addLoading = true;
               cmsApi.page_add(this.pageForm).then((res) => {
-                  console.log(res);
                 if(res.success){
                   this.addLoading = false;
                   //NProgress.done();
@@ -124,8 +123,8 @@
                     message: '提交成功',
                     type: 'success'
                   });
+                  //清空表单
                   this.$refs['pageForm'].resetFields();
-
                 }else if(res.message){
                   this.addLoading = false;
                   this.$message.error(res.message);
