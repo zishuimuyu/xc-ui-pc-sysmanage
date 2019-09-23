@@ -21,7 +21,7 @@ export const page_add = params => {
 export const page_edit = params => {
   return http.requestPut(apiUrl + '/cms/page/edit', params)
 }
-/*页面查询*/
+/*根据页面ID查询*/
 export const page_get = id => {
   return http.requestQuickGet(apiUrl + '/cms/page/get/' + id)
 }
