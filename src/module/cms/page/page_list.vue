@@ -103,13 +103,13 @@ export default {
         }
       });
     },
-    postPage(id) {
+    postPage(pageId) {
       this.$confirm("确认发布该页面吗?", "提示", {})
         .then(() => {
           this.listLoading = true;
-          cmsApi.page_postPage(id).then(res => {
+          cmsApi.page_postPage(pageId).then(res => {
             if (res.success) {
-              console.log("发布页面id=" + id);
+              console.log("发布页面id=" + pageId);
               this.listLoading = false;
               this.$message.success("发布成功，请稍后查看结果");
             } else {
